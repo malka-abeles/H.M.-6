@@ -1,0 +1,29 @@
+[
+      {
+        "id": 1,
+        "name": "ג'ון דו",
+        "phon": "1234567890",
+        "email": "johndoe@example.com",
+        "position": "מנהל בכיר",
+        "department": "מכירות",
+        "start_of_work_date": "2020-01-01"
+      },
+      {
+        "id": 2,
+        "name": "ג'יין סמית'",
+        "phon": "9876543210",
+        "email": "janesmith@example.com",
+        "position": "מנהל צוות",
+        "department": "שיווק",
+        "start_of_work_date": "2021-03-15"
+      },
+      {
+        "id": 3,
+        "name": "דיוויד ג'ונסון",
+        "phon": "4567890123",
+        "email": "davidjohnson@example.com",
+        "position": "עובד",
+        "department": "IT",
+        "start_of_work_date": "2019-07-10"
+      }
+    ]
