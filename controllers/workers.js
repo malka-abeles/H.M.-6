@@ -8,7 +8,7 @@ router.get('/:id', (req, res) => {
   const workerId = parseInt(req.params.id);
   const worker = workers.find(worker => worker.id === workerId);
   if(worker==null)
-    res.status(404).send("");
+    res.status(404).send();
   else
     res.send(worker);
 });
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
   }
 
   if(filteredWorkers[0]==null)
-    res.status(404).send('');
+    res.status(404).send();
   else
     res.send(filteredWorkers);
 });
