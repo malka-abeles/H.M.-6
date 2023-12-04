@@ -7,7 +7,10 @@ const workers = require('../data/workers.json');
 router.get('/:id', (req, res) => {   
   const workerId = parseInt(req.params.id);
   const worker = workers.find(worker => worker.id === workerId);
-  res.send(worker || {});
+  if(worker==null)
+    res.status(404).send("");
+  else
+    res.send(worker);
 });
 
 // Get list of all workers
@@ -20,7 +23,6 @@ router.get('/', (req, res) => {
   let filteredWorkers = workers;
   
   if (position) {
-    filteredWorkers.push({"id":"try it!"});
     filteredWorkers = filteredWorkers.filter(worker => worker.position != position);
   }
   if (department) {
@@ -30,7 +32,10 @@ router.get('/', (req, res) => {
     filteredWorkers = filteredWorkers.filter(worker => worker.startDate > startDate);
   }
 
-  res.send(filteredWorkers);
+  if(filteredWorkers[0]==null)
+    res.status(404).send('');
+  else
+    res.send(filteredWorkers);
 });
 
 module.exports = router;

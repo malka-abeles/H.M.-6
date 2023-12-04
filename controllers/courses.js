@@ -10,7 +10,10 @@ router.get('/',(req,res)=>{
 router.get('/:id',(req,res)=>{
     const id=parseInt(req.params.id);
     const cours=courses.find(cours => cours.id === id);
-    res.send(cours||{});
+    if(cours== null)
+        res.status(404).send("");
+    else
+        res.send(cours);
 })
 
 

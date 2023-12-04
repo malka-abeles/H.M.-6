@@ -9,6 +9,17 @@ const coursesController = require('./controllers/courses');
 app.use('/workers', workersController);
 app.use('/courses', coursesController);
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('error in the router, please try later');
+  });
+
+
+app.get("*",function (req,res){
+	res.status(404).send("יש לך טעות בכתובת");
+})
+
+
 
 app.listen(PORT, (error) =>{ 
 	if(!error) 
@@ -17,3 +28,4 @@ app.listen(PORT, (error) =>{
 		console.log("Error occurred, server can't start", error); 
 	} 
 );
+
