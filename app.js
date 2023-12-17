@@ -2,6 +2,9 @@ const express = require('express');
 const app = express(); 
 const PORT = 3000; 
 
+const a = require('body-parser');
+app.use(a.json());
+app.use(a.urlencoded({extended:false}));
 
 const workersController = require('./controllers/workers');
 const coursesController = require('./controllers/courses');
